@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="Sarfaraz Halai — iOS engineer, product thinker, and builder exploring the intersection of technology, AI, and meaningful user experiences.">
+  <title>Sarfaraz Halai — Engineer. Product Thinker. Builder.</title>
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --surface: rgba(255,255,255,.78);
+      --surface-solid: #fff;
+      --ink: #1d1d1f;
+      --muted: #6e6e73;
+      --blue: #06c;
+      --line: rgba(29,29,31,.1);
+      --dark: #09090b;
+      --radius: 28px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(245,245,247,.78);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    nav {
+      max-width: var(--max); height: 52px; padding: 0 24px; margin: auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      font-size: 12px; letter-spacing: .01em;
+    }
+    .brand { font-weight: 650; font-size: 14px; letter-spacing: -.025em; white-space: nowrap; }
+    .nav-links { display: flex; gap: 27px; color: #424245; }
+    .nav-links a:hover, .text-link:hover { color: var(--blue); }
+    .nav-cta { color: var(--blue); white-space: nowrap; }
+    .container { max-width: var(--max); margin: auto; padding: 0 24px; }
+    .hero {
+      min-height: 680px; display: grid; place-items: center; text-align: center;
+      padding-top: 76px; padding-bottom: 100px; overflow: hidden;
+    }
+    .eyebrow { color: var(--muted); font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    h1 {
+      font-size: clamp(48px, 8.3vw, 96px); line-height: .99; letter-spacing: -.075em;
+      font-weight: 700; margin: 22px 0 24px;
+    }
+    .gradient-text {
+      background: linear-gradient(105deg, #1d1d1f 8%, #626269 43%, #0071e3 95%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-copy { max-width: 720px; margin: 0 auto; color: #515154; font-size: clamp(18px, 2.3vw, 24px); line-height: 1.42; letter-spacing: -.025em; }
+    .hero-actions { display: flex; justify-content: center; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 34px; font-size: 16px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--blue); color: white; border-radius: 999px; padding: 12px 21px;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .button:hover { background: #0077ed; transform: translateY(-1px); }
+    .text-link { color: var(--blue); }
+    .arrow { font-size: 1.12em; }
+    .hero-art {
+      width: min(780px, 100%); height: 210px; margin: 64px auto 0; position: relative;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      perspective: 900px;
+    }
+    .orb {
+      position: absolute; width: 190px; height: 190px; border-radius: 50%;
+      background: radial-gradient(circle at 30% 25%, #f8fbff 0%, #b5d9ff 18%, #4b8df8 44%, #173d99 70%, #09132e 100%);
+      box-shadow: inset -18px -22px 45px rgba(0,0,0,.35), 0 30px 80px rgba(30,94,220,.23);
+      filter: saturate(1.05);
+    }
+    .orbit {
+      position: absolute; width: 410px; height: 140px; border: 1px solid rgba(0,102,204,.25);
+      border-radius: 50%; transform: rotate(-18deg);
+    }
+    .orbit.two { width: 510px; height: 178px; transform: rotate(22deg); border-color: rgba(110,110,115,.18); }
+    .spark { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #0071e3; box-shadow: 0 0 18px #0071e3; }
+    .spark.s1 { top: 34px; left: 24%; } .spark.s2 { bottom: 25px; right: 25%; width: 5px; height: 5px; background: #a6ceff; }
+    section { padding: 88px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 30px; }
+    h2 { font-size: clamp(34px, 5vw, 56px); line-height: 1.04; letter-spacing: -.06em; margin: 0; }
+    .section-intro { max-width: 440px; color: var(--muted); margin: 0; font-size: 17px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card {
+      border-radius: var(--radius); background: var(--surface-solid); padding: 32px;
+      border: 1px solid rgba(0,0,0,.035); min-width: 0;
+    }
+    .card h3 { font-size: 25px; letter-spacing: -.045em; line-height: 1.15; margin: 12px 0 12px; }
+    .card p { color: var(--muted); margin: 0; }
+    .card .kicker { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: .13em; font-weight: 700; }
+    .wide { grid-column: span 7; }
+    .narrow { grid-column: span 5; }
+    .half { grid-column: span 6; }
+    .full { grid-column: span 12; }
+    .dark-card { background: var(--dark); color: #f5f5f7; position: relative; overflow: hidden; }
+    .dark-card p, .dark-card .kicker { color: #a1a1a6; }
+    .dark-card .text-link { color: #70b7ff; }
+    .big-number { font-size: clamp(58px, 8vw, 92px); font-weight: 700; letter-spacing: -.08em; line-height: 1; margin: 30px 0 12px; }
+    .mini-label { color: var(--muted); font-size: 13px; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 12px; font-size: 12px; color: #515154; background: rgba(255,255,255,.7); }
+    .dark-card .pill { border-color: rgba(255,255,255,.18); color: #d2d2d7; background: rgba(255,255,255,.06); }
+    .project-top { display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+    .project-icon {
+      width: 48px; height: 48px; flex: 0 0 auto; border-radius: 15px;
+      display: grid; place-items: center; font-size: 22px; color: #fff;
+      background: linear-gradient(145deg, #5aa8ff, #0749a5);
+    }
+    .project-icon.orange { background: linear-gradient(145deg, #ffb56d, #d6531f); }
+    .project-icon.purple { background: linear-gradient(145deg, #c5a7ff, #5c3ca4); }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .project-meta span { font-size: 12px; padding: 5px 9px; border-radius: 8px; background: #f5f5f7; color: #515154; }
+    .principle { padding: 26px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 70px 1fr; gap: 20px; }
+    .principle:first-child { border-top: 0; }
+    .principle-num { color: #a1a1a6; font-size: 14px; padding-top: 5px; }
+    .principle h3 { margin: 0 0 8px; font-size: 22px; letter-spacing: -.04em; }
+    .principle p { color: var(--muted); margin: 0; max-width: 720px; }
+    .contact {
+      text-align: center; padding: 88px 28px; border-radius: 34px;
+      background: #fff; border: 1px solid rgba(0,0,0,.04);
+    }
+    .contact h2 { max-width: 720px; margin: 0 auto 20px; }
+    .contact p { color: var(--muted); max-width: 580px; margin: 0 auto; font-size: 18px; }
+    .contact .hero-actions { margin-top: 28px; }
+    footer { padding: 30px 0 42px; color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 20px; }
+    @media (max-width: 760px) {
+      nav { padding: 0 18px; } .nav-links { gap: 15px; } .nav-links a:nth-child(2), .nav-links a:nth-child(3) { display: none; }
+      .container { padding: 0 18px; } .hero { min-height: auto; padding-top: 80px; padding-bottom: 65px; }
+      .hero-art { height: 180px; margin-top: 42px; } .orb { width: 145px; height: 145px; } .orbit { width: 300px; height: 110px; } .orbit.two { width: 350px; height: 130px; }
+      section { padding: 60px 0; } .section-head { display: block; } .section-intro { margin-top: 16px; }
+      .wide, .narrow, .half, .full { grid-column: span 12; } .card { padding: 25px; border-radius: 23px; }
+      .principle { grid-template-columns: 42px 1fr; gap: 12px; } .contact { padding: 60px 22px; border-radius: 26px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <nav aria-label="Main navigation">
+      <a class="brand" href="#top">Sarfaraz Halai</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Selected work</a>
+        <a href="#approach">Approach</a>
+      </div>
+      <a class="nav-cta" href="#contact">Let’s connect <span class="arrow">↗</span></a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <header class="hero container">
+      <div>
+        <div class="eyebrow">Engineer by craft. Product thinker by curiosity.</div>
+        <h1>Building technology<br><span class="gradient-text">around people.</span></h1>
+        <p class="hero-copy">I’m Sarfaraz — an iOS engineer with 10 years of experience, now exploring product management and AI to turn real user problems into useful, thoughtful products.</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">Explore my work <span class="arrow">↓</span></a>
+          <a class="text-link" href="#about">A little about me <span class="arrow">↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit"></div><div class="orbit two"></div><div class="orb"></div>
+          <div class="spark s1"></div><div class="spark s2"></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>One foot in code.<br>One in product.</h2>
+          <p class="section-intro">I’ve spent a decade building mobile experiences. Now I’m widening the lens — from how to build a feature to why it should exist, who it serves, and how we know it works.</p>
+        </div>
+        <div class="grid">
+          <article class="card wide">
+            <div class="kicker">The next chapter</div>
+            <h3>From shipping features to shaping the right problems.</h3>
+            <p>My engineering background helps me understand feasibility, architecture, and delivery. My product journey is helping me pair that perspective with customer discovery, business outcomes, prioritisation, experimentation, and clear product decisions.</p>
+            <div class="pill-row">
+              <span class="pill">iOS engineering</span><span class="pill">Product discovery</span><span class="pill">AI products</span><span class="pill">User research</span>
+            </div>
+          </article>
+          <article class="card narrow dark-card">
+            <div class="kicker">Experience</div>
+            <div class="big-number">10<span style="font-size:.42em;letter-spacing:-.04em"> yrs</span></div>
+            <p>Building iOS applications and working through the real-world details that make products reliable, usable, and ready for people.</p>
+          </article>
+          <article class="card half">
+            <div class="kicker">What I’m learning</div>
+            <h3>Product judgment, grounded in evidence.</h3>
+            <p>How to identify meaningful friction, validate the problem before designing the solution, and connect user needs to measurable business impact.</p>
+          </article>
+          <article class="card half">
+            <div class="kicker">What I bring</div>
+            <h3>A builder’s point of view.</h3>
+            <p>I’m comfortable moving between user flows, technical constraints, edge cases, product trade-offs, and the question that matters most: did this make things better for the user?</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head">
+          <h2>Selected work<br>& explorations.</h2>
+          <p class="section-intro">A mix of products I’ve helped build and product problems I’m actively learning to solve. These are snapshots of the thinking, not claims of unmeasured impact.</p>
+        </div>
+        <div class="grid">
+          <article class="card wide">
+            <div class="project-top">
+              <div class="kicker">01 / Product & engineering</div>
+              <div class="project-icon">T</div>
+            </div>
+            <h3>TINAADA</h3>
+            <p>A private, text-first discussion app designed to help people connect through topics rather than profile-first browsing. The experience centres on discovering a topic, requesting a conversation, and building a one-to-one discussion around shared curiosity.</p>
+            <div class="project-meta"><span>iOS</span><span>Topic-based connection</span><span>Trust & safety</span><span>Subscriptions</span></div>
+          </article>
+          <article class="card narrow">
+            <div class="project-top">
+              <div class="kicker">02 / Product case study</div>
+              <div class="project-icon orange">↗</div>
+            </div>
+            <h3>Swiggy: when a restaurant is unavailable</h3>
+            <p>Exploring a “Notify Me When Open” safety net that lets a customer save their cart and return when a temporarily unavailable restaurant reopens — reducing repeated effort and avoidable drop-off.</p>
+            <div class="project-meta"><span>Problem framing</span><span>Prototype</span><span>Metrics & guardrails</span></div>
+          </article>
+          <article class="card half">
+            <div class="project-top">
+              <div class="kicker">03 / Product strategy exploration</div>
+              <div class="project-icon purple">✳</div>
+            </div>
+            <h3>A professional growth OS</h3>
+            <p>An early-stage idea exploring how professionals might find the right people around activities and goals — moving beyond static profiles toward purposeful collaboration, learning, and progress.</p>
+            <div class="project-meta"><span>0→1 discovery</span><span>Vision & mission</span><span>AI opportunity</span></div>
+          </article>
+          <article class="card half">
+            <div class="project-top">
+              <div class="kicker">04 / Product practice</div>
+              <div class="project-icon">◎</div>
+            </div>
+            <h3>Learning to find the real problem</h3>
+            <p>Practising a repeatable product process: understand the goal, segment users, investigate behaviour, test root-cause hypotheses, prioritise one problem, and define how success will be measured.</p>
+            <div class="project-meta"><span>Research</span><span>Root-cause analysis</span><span>Prioritisation</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach">
+      <div class="container">
+        <div class="section-head">
+          <h2>How I think<br>about products.</h2>
+          <p class="section-intro">Good product work is not about having the most ideas. It’s about building confidence in what matters, then learning quickly from what happens.</p>
+        </div>
+        <div class="card">
+          <div class="principle">
+            <div class="principle-num">01</div>
+            <div><h3>Start with behaviour, not assumptions.</h3><p>Look at what people actually do, where they hesitate, what they abandon, and which workarounds they create. Treat opinions as signals to investigate, not proof.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-num">02</div>
+            <div><h3>Understand the cause before choosing a fix.</h3><p>Separate the visible symptom from the underlying cause. Compare hypotheses against evidence and avoid jumping straight to a feature because it sounds compelling.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-num">03</div>
+            <div><h3>Balance user value with business reality.</h3><p>Prioritise problems using reach, intensity, frequency, strategic fit, feasibility, and expected impact — while considering the needs of the wider ecosystem.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-num">04</div>
+            <div><h3>Define success before shipping.</h3><p>Choose a primary outcome, supporting metrics, and guardrails. A shipped feature is an output; a meaningful improvement in user behaviour is the outcome.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid">
+          <article class="card full" style="background:linear-gradient(135deg,#e8f2ff 0%,#f8f8fa 55%,#f0eaff 100%);">
+            <div class="kicker">The direction I’m exploring</div>
+            <h2 style="font-size:clamp(32px,5vw,52px);max-width:800px;margin:14px 0 18px;">AI should make people more capable — not just make software look smarter.</h2>
+            <p style="max-width:750px;color:#515154;font-size:18px;">I’m interested in products where AI helps people understand what they need, make better decisions, and take the next useful action. The opportunity starts with a real user problem, not with adding AI for its own sake.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact">
+          <div class="eyebrow">Open to thoughtful conversations</div>
+          <h2>Let’s build something that matters.</h2>
+          <p>I’m interested in connecting with people working across product, mobile engineering, AI, and early-stage ideas — especially those who care about solving the right problem.</p>
+          <div class="hero-actions">
+            <!-- Replace the email and LinkedIn placeholders below with your preferred contact details. -->
+            <a class="button" href="mailto:hello@example.com?subject=Hello%20Sarfaraz">Email me <span class="arrow">↗</span></a>
+            <a class="text-link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Find me on LinkedIn <span class="arrow">↗</span></a>
+          </div>
+          <p style="font-size:12px;margin-top:20px;">Before publishing: replace the placeholder email and LinkedIn URL with your real contact links.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Sarfaraz Halai</span>
+      <span>Made with curiosity, care, and a builder’s mindset.</span>
+    </div>
+  </footer>
+  <script>
+    // Keeps the footer year current without external dependencies.
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
