@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="Sarfaraz Halai — iOS engineer, product thinker, and builder exploring AI and human-centered technology.">
+<title>Sarfaraz Halai | Mission: Build What Matters</title>
+<style>
+:root{--space:#050914;--panel:#0a1222;--panel2:#0d1a2e;--white:#f4f7fb;--muted:#a7b4c7;--blue:#62b6ff;--cyan:#8ce8ff;--red:#ff625c;--line:rgba(166,202,240,.18);--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--space);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(1px 1px at 8% 17%,#fff 98%,transparent),radial-gradient(1px 1px at 74% 28%,#d6e8ff 98%,transparent),radial-gradient(2px 2px at 42% 76%,#fff 98%,transparent),radial-gradient(1px 1px at 91% 81%,#a9d8ff 98%,transparent),radial-gradient(1px 1px at 26% 53%,#fff 98%,transparent),radial-gradient(1px 1px at 59% 9%,#d6e8ff 98%,transparent);background-size:390px 330px,510px 430px,620px 540px,700px 600px,450px 490px,580px 380px;opacity:.65}
+a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 26px}
+.topline{height:4px;background:linear-gradient(90deg,var(--red) 0 18%,#e9f2ff 18% 100%)}
+header{position:sticky;top:0;z-index:20;background:rgba(5,9,20,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.08em;font-size:13px}.insignia{width:34px;height:34px;border:2px solid var(--red);border-radius:50%;display:grid;place-items:center;color:var(--white);font-size:13px;position:relative}.insignia:after{content:"";position:absolute;width:42px;height:2px;background:var(--red);transform:rotate(-36deg)}.navlinks{display:flex;gap:26px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#c2cede}.navlinks a:hover,.link:hover{color:var(--cyan)}.navright{font-size:11px;letter-spacing:.12em;color:var(--cyan);white-space:nowrap}
+.hero{min-height:710px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:38px;padding-top:70px;padding-bottom:80px;position:relative}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}.status{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);padding:7px 11px;border-radius:4px;font-size:10px;letter-spacing:.14em;color:#c3d4e8;margin-bottom:24px}.dot{width:7px;height:7px;background:#7de6a5;border-radius:50%;box-shadow:0 0 12px #7de6a5}
+h1{font-size:clamp(48px,7vw,88px);line-height:.95;letter-spacing:-.065em;margin:18px 0 25px;font-weight:800}h1 span{display:block;color:var(--blue)}.hero p{font-size:18px;max-width:590px;color:#bdc9d9;line-height:1.7}.actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-flex;align-items:center;gap:12px;padding:13px 18px;background:var(--red);color:white;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);transition:transform .2s}.btn:hover{transform:translateY(-2px)}.link{color:var(--cyan);font-size:12px;letter-spacing:.08em}
+.space-art{height:430px;position:relative;display:grid;place-items:center}.planet{width:min(340px,72vw);aspect-ratio:1;border-radius:50%;position:relative;background:radial-gradient(circle at 32% 24%,#9ce6ff 0,#3878b8 10%,#17416c 32%,#0c1b37 58%,#030814 76%);box-shadow:inset -34px -26px 55px #02050d,0 0 75px rgba(57,153,255,.2)}.planet:before{content:"";position:absolute;inset:18% -18%;border:1px solid rgba(119,207,255,.62);border-radius:50%;transform:rotate(-24deg) scaleY(.35)}.planet:after{content:"";position:absolute;inset:30% -26%;border:1px solid rgba(255,255,255,.25);border-radius:50%;transform:rotate(27deg) scaleY(.23)}.planet-label{position:absolute;right:2%;bottom:8%;border-left:2px solid var(--red);padding:8px 0 8px 13px;font-size:10px;letter-spacing:.16em;color:#c8d6e8;line-height:1.8}.planet-label strong{display:block;color:white;font-size:12px}.orbit{position:absolute;width:95%;height:70%;border:1px dashed rgba(134,194,245,.28);border-radius:50%;transform:rotate(-20deg)}.orbit2{width:115%;height:50%;transform:rotate(28deg);border-color:rgba(255,98,92,.32)}.satellite{position:absolute;top:17%;right:17%;width:14px;height:14px;background:var(--red);transform:rotate(45deg);box-shadow:0 0 20px rgba(255,98,92,.5)}.crosshair{position:absolute;top:10%;left:9%;color:var(--cyan);font-size:25px}
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(11,23,42,.65)}.tickerinner{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:20px;padding-bottom:20px}.metric{border-left:2px solid var(--red);padding-left:13px}.metric b{display:block;font-size:12px;letter-spacing:.1em}.metric span{font-size:11px;color:var(--muted)}
+section{padding:92px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}.section-id{color:var(--red);font-size:11px;letter-spacing:.18em;font-weight:800;margin-bottom:9px}h2{font-size:clamp(34px,5vw,55px);line-height:1.05;letter-spacing:-.05em;margin:0}.intro{max-width:470px;color:var(--muted);font-size:15px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:linear-gradient(145deg,rgba(13,26,46,.96),rgba(7,15,29,.96));border:1px solid var(--line);padding:28px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;top:0;left:0;width:42px;height:2px;background:var(--red)}.span7{grid-column:span 7}.span5{grid-column:span 5}.span6{grid-column:span 6}.span12{grid-column:span 12}.cardtop{display:flex;align-items:center;justify-content:space-between;gap:14px}.micro{font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--cyan);font-weight:700}.symbol{width:43px;height:43px;border:1px solid rgba(140,232,255,.35);display:grid;place-items:center;color:var(--cyan);font-size:19px}.card h3{font-size:25px;line-height:1.15;letter-spacing:-.035em;margin:19px 0 12px}.card p{font-size:14px;color:var(--muted);margin:0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}.tags span{font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border:1px solid var(--line);color:#c3d2e4}
+.big{font-size:clamp(54px,8vw,82px);line-height:1;font-weight:800;letter-spacing:-.07em;margin:27px 0 12px}.big small{font-size:20px;letter-spacing:0;color:var(--cyan)}.redline{height:2px;width:58px;background:var(--red);margin:22px 0}
+.steps{border-top:1px solid var(--line)}.step{display:grid;grid-template-columns:80px 1fr;gap:20px;padding:25px 0;border-bottom:1px solid var(--line)}.stepnum{font-size:12px;color:var(--red);letter-spacing:.1em;padding-top:5px}.step h3{margin:0 0 8px;font-size:21px;letter-spacing:-.03em}.step p{max-width:780px;color:var(--muted);margin:0;font-size:14px}
+.mission{padding:38px;background:linear-gradient(110deg,#0e2543,#0a1325 65%,#201426);border:1px solid rgba(119,190,255,.24);position:relative;overflow:hidden}.mission:after{content:"";position:absolute;right:-50px;top:-100px;width:300px;height:300px;border:1px solid rgba(140,232,255,.17);border-radius:50%;box-shadow:0 0 0 35px rgba(140,232,255,.025),0 0 0 70px rgba(140,232,255,.02)}.mission h2{max-width:800px;margin:14px 0 18px}.mission p{max-width:760px;color:#bdc9d9;font-size:16px;position:relative;z-index:1}.contact{border:1px solid var(--line);padding:60px 25px;text-align:center;background:rgba(9,19,35,.88)}.contact h2{max-width:760px;margin:12px auto 18px}.contact p{max-width:600px;margin:0 auto;color:var(--muted)}.contact .actions{justify-content:center}footer{border-top:1px solid var(--line);padding:25px 0 35px;color:#8e9cb0;font-size:10px;letter-spacing:.06em}.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:780px){.wrap{padding:0 19px}.navlinks{gap:13px}.navlinks a:nth-child(2),.navlinks a:nth-child(3){display:none}.navright{display:none}.hero{grid-template-columns:1fr;padding-top:58px;gap:10px;min-height:0}.hero p{font-size:16px}.space-art{height:330px}.planet{width:250px}.tickerinner{grid-template-columns:repeat(2,1fr)}section{padding:65px 0}.section-head{display:block}.intro{margin-top:17px}.span7,.span5,.span6,.span12{grid-column:span 12}.card{padding:24px}.mission{padding:27px}.step{grid-template-columns:45px 1fr;gap:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header><nav class="wrap">
+<a class="brand" href="#top"><span class="insignia">SH</span><span>SARFARAZ HALAI<br><span style="font-size:9px;color:#9baec6;font-weight:500">PERSONAL MISSION PROFILE</span></span></a>
+<div class="navlinks"><a href="#profile">Profile</a><a href="#missions">Projects</a><a href="#method">Approach</a></div>
+<a class="navright" href="#contact">ESTABLISH CONTACT ↗</a>
+</nav></header>
+<main id="top">
+<section class="hero wrap">
+<div>
+<div class="status"><span class="dot"></span> STATUS: BUILDING THE NEXT CHAPTER</div>
+<div class="eyebrow">Engineer · Product thinker · Builder</div>
+<h1>MISSION:<br><span>BUILD WHAT</span> MATTERS.</h1>
+<p>I’m Sarfaraz Halai — an iOS engineer with 10 years of experience, exploring product management and AI to turn real human problems into useful technology.</p>
+<div class="actions"><a class="btn" href="#missions">Explore missions <span>↘</span></a><a class="link" href="#profile">VIEW MY PROFILE ↗</a></div>
+</div>
+<div class="space-art" aria-label="Decorative illustration of a blue planet and orbital paths">
+<div class="orbit"></div><div class="orbit orbit2"></div><div class="planet"></div><div class="satellite"></div><div class="crosshair">+</div>
+<div class="planet-label">FIELD OF INTEREST<strong>HUMAN-CENTERED AI</strong>ORBIT: PRODUCT DISCOVERY</div>
+</div>
+</section>
+<div class="ticker"><div class="wrap tickerinner">
+<div class="metric"><b>01 / ENGINEERING</b><span>10 years building iOS products</span></div>
+<div class="metric"><b>02 / DISCOVERY</b><span>Research before solutions</span></div>
+<div class="metric"><b>03 / PRODUCT</b><span>From features to outcomes</span></div>
+<div class="metric"><b>04 / FRONTIER</b><span>Practical, human-centred AI</span></div>
+</div></div>
+
+<section id="profile"><div class="wrap">
+<div class="section-head"><div><div class="section-id">01 — CREW PROFILE</div><h2>A builder’s mind.<br>A product lens.</h2></div><p class="intro">A decade in mobile engineering taught me how products work under the hood. My next chapter is about broadening that view: finding the right problem, making sound trade-offs, and measuring whether a solution matters.</p></div>
+<div class="grid">
+<article class="card span7"><div class="cardtop"><div class="micro">Current trajectory</div><div class="symbol">↗</div></div><h3>From shipping features to shaping the right problems.</h3><p>I’m bringing technical depth into product discovery, customer research, prioritisation, experimentation, and business thinking. I want to understand not only how to build something well, but why it deserves to be built.</p><div class="tags"><span>iOS engineering</span><span>Product strategy</span><span>AI products</span><span>User research</span></div></article>
+<article class="card span5"><div class="micro">Flight hours</div><div class="big">10<small> YEARS</small></div><p>Building mobile applications and working through the details that make real products usable, reliable, and ready for people.</p><div class="redline"></div><p style="font-size:12px">Strength: connecting implementation details to the bigger product experience.</p></article>
+<article class="card span6"><div class="cardtop"><div class="micro">Engineering systems</div><div class="symbol">⌘</div></div><h3>Make complex things work simply.</h3><p>Mobile app architecture, API integration, real-time experiences, subscription flows, and the edge cases that shape user trust.</p></article>
+<article class="card span6"><div class="cardtop"><div class="micro">Product judgment</div><div class="symbol">◎</div></div><h3>Evidence over instinct alone.</h3><p>Investigate user behaviour, compare root-cause hypotheses, prioritise meaningful friction, and define the metrics that reveal whether a change worked.</p></article>
+</div></div></section>
+
+<section id="missions"><div class="wrap">
+<div class="section-head"><div><div class="section-id">02 — SELECTED MISSIONS</div><h2>Projects &<br>product explorations.</h2></div><p class="intro">A portfolio of products I’ve worked on and problems I’m learning to solve. These are snapshots of the work and thinking — not claims of unmeasured impact.</p></div>
+<div class="grid">
+<article class="card span7"><div class="cardtop"><div class="micro">Mission 01 / Mobile product</div><div class="symbol">T</div></div><h3>TINAADA</h3><p>A private, text-first discussion app designed to help people connect through topics rather than profile-first browsing. The core journey centres on discovering a topic, requesting a conversation, and building a one-to-one discussion around shared curiosity.</p><div class="tags"><span>iOS</span><span>Topic-based connection</span><span>Trust & safety</span><span>Subscriptions</span></div></article>
+<article class="card span5"><div class="cardtop"><div class="micro">Mission 02 / Product case</div><div class="symbol">↻</div></div><h3>Swiggy: restaurant unavailable</h3><p>Exploring a “Notify Me When Open” safety net: let customers save a cart and return when a temporarily unavailable restaurant reopens, reducing repeated effort and avoidable drop-off.</p><div class="tags"><span>Problem framing</span><span>Prototype</span><span>Metrics</span></div></article>
+<article class="card span6"><div class="cardtop"><div class="micro">Mission 03 / 0→1 concept</div><div class="symbol">✳</div></div><h3>A professional growth OS</h3><p>An early-stage idea for helping professionals find the right people around activities and goals — moving beyond static profiles toward purposeful collaboration, learning, and progress.</p><div class="tags"><span>Vision & mission</span><span>Discovery</span><span>AI opportunity</span></div></article>
+<article class="card span6"><div class="cardtop"><div class="micro">Mission 04 / Product practice</div><div class="symbol">⌖</div></div><h3>Finding the real problem</h3><p>Building a repeatable method: understand the goal, segment users, investigate behaviour, test root causes, prioritise one problem, and define how success will be measured.</p><div class="tags"><span>Research</span><span>RCA</span><span>Prioritisation</span></div></article>
+</div></div></section>
+
+<section id="method"><div class="wrap">
+<div class="section-head"><div><div class="section-id">03 — OPERATING PRINCIPLES</div><h2>How I approach<br>the unknown.</h2></div><p class="intro">The best product decisions are not guesses dressed up as certainty. They are hypotheses tested against evidence, constraints, and outcomes.</p></div>
+<div class="steps">
+<div class="step"><div class="stepnum">01 / OBSERVE</div><div><h3>Start with behaviour, not assumptions.</h3><p>Find what people actually do, where they hesitate, what they abandon, and which workarounds they create. Treat opinions as signals to investigate — not proof.</p></div></div>
+<div class="step"><div class="stepnum">02 / DIAGNOSE</div><div><h3>Understand the cause before choosing a fix.</h3><p>Separate symptoms from causes. Compare root-cause hypotheses against evidence and resist jumping straight to the most exciting feature idea.</p></div></div>
+<div class="step"><div class="stepnum">03 / PRIORITISE</div><div><h3>Balance user value with business reality.</h3><p>Evaluate reach, intensity, frequency, strategic fit, feasibility, and expected impact — while considering the needs of the wider ecosystem.</p></div></div>
+<div class="step"><div class="stepnum">04 / MEASURE</div><div><h3>Define success before launch.</h3><p>Choose a primary outcome, supporting metrics, and guardrails. A shipped feature is an output; a meaningful improvement in user behaviour is the outcome.</p></div></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="mission">
+<div class="section-id">04 — FUTURE RESEARCH AREA</div><div class="eyebrow">Human-centred artificial intelligence</div>
+<h2>AI should expand human capability — not just make software look smarter.</h2>
+<p>I’m interested in products where AI helps people understand what they need, make better decisions, and take the next useful action. The opportunity starts with a real user problem, not with adding AI for its own sake.</p>
+</div></div></section>
+
+<section id="contact"><div class="wrap"><div class="contact">
+<div class="eyebrow">END OF TRANSMISSION? NOT QUITE.</div><h2>Have a meaningful problem to solve?</h2><p>I’m interested in conversations across product, mobile engineering, AI, and early-stage ideas — especially with people who care about understanding the problem before building the solution.</p>
+<div class="actions"><a class="btn" href="mailto:hello@example.com?subject=Hello%20Sarfaraz">Send a transmission ↗</a><a class="link" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">CONNECT ON LINKEDIN ↗</a></div>
+<p style="font-size:11px;margin-top:18px">Launch checklist: replace the placeholder email and LinkedIn URL with your actual contact details.</p>
+</div></div></section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year">2026</span> SARFARAZ HALAI</span><span>PERSONAL MISSION PROFILE · BUILT FOR THE NEXT FRONTIER</span></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
